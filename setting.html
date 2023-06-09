@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/index.css">
+    <title>App Kurir</title>
+</head>
+<body>
+    <div class="container-setting">
+        <!-- header -->
+        <div class="header">
+            <img src="public/gambar/icon/header-antar-laundry.svg" alt="">
+            <h2 class="text-sambutan">Selamat Datang</h2>
+            <h1 class="text-user">Nur Ridho</h1>
+        </div>
+        <!-- bar status -->
+        <div class="display-status">
+            <div class="status">
+                <div class="l-flex">
+                    <div>misi: 10px</div>
+                    <div>Point :100point</div>
+                </div>
+            </div>
+        </div>
+        <!-- main -->
+        <div class="main">
+            <div class="main-title">
+                <p>Layanan Kami</p>
+            </div>
+            <div class="contain-main">
+                <div id="openModalBtn" class="square-icon">
+                    <img src="public/gambar/icon/profile.svg" alt="">
+                    <p>Profil</p>
+                </div>
+                <div class="square-icon">
+                    <img src="public/gambar/icon/password.svg" alt="">
+                    <p>Password</p>
+                </div>
+                <div class="square-icon">
+                    <img src="public/gambar/icon/help.svg" alt="">
+                    <p>Bantuan</p>
+                </div>
+            </div>
+        </div>
+        <!-- navbar -->
+        <div class="navbar">
+            <div>
+                <a href="index.html">
+                    <img src="public/gambar/icon/iconhome.svg" alt="iconhome">
+                    <p>Home</p>
+                </a>
+            </div>
+            <div>
+                <a href="pesanan.html">
+                    <img src="public/gambar/icon/iconcuci.svg" alt="iconcuci">
+                    <p>Pesanan</p>
+                </a>
+            </div>
+            <div>
+                <a href="setting.html">
+                    <img src="public/gambar/icon/iconsetting.svg" alt="iconsetting">
+                    <p>Akun</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Kiloan</h2>
+            <div class="group-from">
+                <label  for="photo">Photo Profil</label>
+                <input id="photo" type="file">
+            </div>
+            <div class="group-from">
+                <label for="price_first">Nama</label>
+                <input type="text" id="price_first" name="price_first"/>
+            </div>
+            <div class="group-from">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="price_first"/>
+            </div>
+            <div class="group-from">
+                <label for="lokasi">Lokasi</label>
+                <input type="text" id="lokasi" name="price_first"/>
+            </div>
+        </div>
+    </div>
+    <script>
+        let openModalBtn =document.getElementsByClassName("square-icon");
+        let modal = document.getElementById("myModal");
+        let closeBtn = document.getElementsByClassName("close")[0];
+        for (let index = 0; index < openModalBtn.length; index++) {
+            const element = openModalBtn[index];
+            element.addEventListener("click", function() {
+                modal.style.display = "block";
+             });
+
+            closeBtn.addEventListener("click", function() {
+                modal.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

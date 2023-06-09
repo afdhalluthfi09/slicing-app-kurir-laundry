@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <link rel="stylesheet" href="public/css/index.css">
+    <title>App Kurir</title>
+</head>
+
+<body>
+    <div class="container-setting">
+        <!-- header -->
+        <div class="header">
+            <img src="public/gambar/icon/header-antar-laundry.svg" alt="">
+            <h2 class="text-sambutan">Selamat Datang</h2>
+            <h1 class="text-user">Nur Ridho</h1>
+        </div>
+        <!-- bar status -->
+        <div class="display-status">
+            <div class="status">
+                <div class="l-flex">
+                    <div>misi: 10px</div>
+                    <div>Point :100point</div>
+                </div>
+            </div>
+        </div>
+        <!-- main -->
+        <div id="map" style="width: 100%; height: 300px;"></div>
+        <!-- navbar -->
+        <div class="navbar">
+            <div>
+                <a href="index.html">
+                    <img src="public/gambar/icon/iconhome.svg" alt="iconhome">
+                    <p>Home</p>
+                </a>
+            </div>
+            <div>
+                <a href="pesanan.html">
+                    <img src="public/gambar/icon/iconcuci.svg" alt="iconcuci">
+                    <p>List Pesanan</p>
+                </a>
+            </div>
+            <div>
+                <a href="setting.html">
+                    <img src="public/gambar/icon/iconsetting.svg" alt="iconsetting">
+                    <p>Akun</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([51.505, -0.09], 13);
+        let elementMap =document.querySelector('#map');
+        
+        // leaflet-routing-container-hide
+
+        // Add a tile layer (e.g., OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+            maxZoom: 18,
+        }).addTo(map);
+        L.Routing.control({
+            waypoints: [
+                L.latLng(51.5, -0.1), // Start point
+                L.latLng(51.51, -0.12) // End point
+            ],
+            routeWhileDragging: true // Update route in real-time while dragging waypoints
+        }).addTo(map);
+        let elementBar =document.querySelector('.leaflet-routing-container');
+        elementMap.addEventListener('click',function(){
+            elementBar.classList.toggle('leaflet-routing-container-hide');
+        });
+    </script>
+</body>
+</html>
