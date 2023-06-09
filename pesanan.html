@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-pesanan">
+        <!-- header -->
+        <div class="header">
+            <img src="public/gambar/icon/header-antar-laundry.svg" alt="">
+            <h2 class="text-sambutan">Selamat Datang</h2>
+            <h1 class="text-user">Nur Ridho</h1>
+        </div>
+        <!-- bar status -->
+        <div class="display-status">
+            <div class="status">
+                <div class="l-flex">
+                    <div>Cuci: 10px</div>
+                    <div>Point :100point</div>
+                </div>
+            </div>
+        </div>
+        <!-- main -->
+        <div class="main">
+            <div class="message-title">Pesan Aktif</div>
+            <div class="contain-message">
+                <div class="card-body collapse-button" onclick="toggleCollapse()">
+                    <div class="contain-body">
+                        <img src="public/gambar/icon/icon-cuci.svg" alt="">
+                        <div class="display-flex-column">
+                            <div class="detail-status">Pesanan No.0002142</div>
+                            <div class="detail-status">Antar</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse-content" id="myCollapse">
+                    <p>Jl. Ring Road Utara, Ngringin, Condongcatur, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281</p>
+                    <div class="layout-flex-left">
+                        <a href="index.html">menuju lokasi</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="contain-body">
+                        <img src="public/gambar/icon/icon-cuci.svg" alt="">
+                        <div class="display-flex-column">
+                            <div class="detail-status">Pesanan No.0002142</div>
+                            <div class="detail-status">Sudah selesai</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="contain-body">
+                        <img src="public/gambar/icon/icon-cuci.svg" alt="">
+                        <div class="display-flex-column">
+                            <div class="detail-status">Pesanan No.0002142</div>
+                            <div class="detail-status">Sudah selesai</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- navbar -->
+        <div class="navbar">
+            <div>
+                <a href="index.html">
+                    <img src="public/gambar/icon/iconhome.svg" alt="iconhome">
+                    <p>Home</p>
+                </a>
+            </div>
+            <div>
+                <a href="pesanan.html">
+                    <img src="public/gambar/icon/iconcuci.svg" alt="iconcuci">
+                    <p>Pesanan</p>
+                </a>
+            </div>
+            <div>
+                <a href="setting.html">
+                    <img src="public/gambar/icon/iconsetting.svg" alt="iconsetting">
+                    <p>Akun</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleCollapse() {
+            var collapseContent = document.getElementById('myCollapse');
+            collapseContent.classList.toggle('show');
+        }
+
+
+    </script>
+</body>
+</html>
